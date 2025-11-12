@@ -1,0 +1,70 @@
+/* BCIS 3680 Assignment 3
+   Date:
+   Author:
+*/
+
+package burnell.frank.assignment3;
+
+public abstract class Device
+{
+    private String brand;
+    private String model;
+    private float price;
+    private boolean tradeIn;
+
+    // Full-initialization Constructor
+    public Device(String brand, String model, float price, boolean tradeIn)
+    {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+    this.tradeIn = tradeIn;
+    }
+
+    public Device()
+    {
+    }
+	
+	public String getBrand()
+    {
+        return brand;
+    }
+
+    public void setBrand(String b)
+    {
+        brand = b;
+    }
+
+    public String getModel()
+    {
+        return model;
+    }
+
+    public void setModel(String m)
+    {
+        model = m;
+    }
+
+    public float getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(float p)
+    {
+        price = p;
+    }
+
+    public boolean hasTradeIn()
+    {
+        return tradeIn;
+    }
+
+    public void setTradeIn(boolean t)
+    {
+        tradeIn = t;
+    }
+
+    public abstract String readDeviceInfo();
+	
+}

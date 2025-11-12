@@ -1,0 +1,6 @@
+package burnell.frank.assignment3;
+
+public interface Kioskable 
+{
+    String runDemo();
+}

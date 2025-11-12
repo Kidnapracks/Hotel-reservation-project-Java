@@ -1,0 +1,57 @@
+package burnell.frank.assignment3;
+
+public class CellPhone extends Device 
+
+{
+
+    private String carrier;
+    private String phoneNum;
+
+    
+    public CellPhone(String brand, String model, float price, boolean tradeIn,
+                     String carrier, String phoneNum) 
+    {
+       
+        super(brand, model, price, tradeIn);
+
+        this.carrier = carrier;
+        this.phoneNum = phoneNum;
+    }
+
+    
+    public String getCarrier() 
+    {
+        return carrier;
+    }
+
+    public void setCarrier(String carrier) 
+    {
+        this.carrier = carrier;
+    }
+
+    public String getPhoneNum() 
+    {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) 
+    {
+        this.phoneNum = phoneNum;
+    }
+
+    
+    @Override
+    public String readDeviceInfo() 
+    
+    {
+        java.text.DecimalFormat df = new java.text.DecimalFormat("$#,##0.00");
+        String tradeInStatus = hasTradeIn() ? "Yes" : "No";
+
+        return "Cell Phone Info"
+             + "\nBrand: " + getBrand()
+             + "\nModel: " + getModel()
+             + "\nWith Trade-In: " + tradeInStatus
+             + "\nCarrier: " + carrier
+             + "\nPrice: " + df.format(getPrice());
+    }
+}

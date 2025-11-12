@@ -1,0 +1,50 @@
+/* JCE on Inheritance
+   Fall 2025
+   Student:
+   Date:
+ */
+
+ /* This is the template for master's student objects. It is a subclass
+   of the Graduate class, which itself is a subclass of Student in turn. */
+
+package burnell.frank.jce4;
+
+public class Master extends Graduate
+{
+    private String thesisTitle;
+
+    public Master (String i, String n, char g, float gpa, int gmat, String t)
+    {
+       super(i, n, g, gpa, gmat);
+       thesisTitle = t;        
+    }
+
+    public StringBuilder doResearch()
+    {
+        StringBuilder m = new StringBuilder();
+
+        m.append("====================================================================\n");
+        m.append("       Master's Research: Output from doResearch() in Master\n");
+        m.append("====================================================================\n");
+
+        m.append(
+                "In our program, Master students are expected to design and implement\n"
+                + "a simple academic study. In addition to books, magazines, websites, \n"
+                + "Google, and other public sources, students also need to utilize some\n"
+                + "academic literature. The thesis study is to be completed within two\n"
+                + "semesters and contains 30-50 pages, excluding bibliography, tables, \n"
+                + "figures, data, and other supporting materials.\n\n");
+
+        return m;   
+    }
+
+    public void setThesisTitle(String t)
+    {
+        thesisTitle = t;
+    }
+
+    public String getThesisTitle()
+    {
+        return thesisTitle;
+    }
+}

@@ -1,0 +1,39 @@
+/* JCE on Exception Handling
+   Fall 2025
+   Student:
+   Date:
+ */
+
+package burnell.frank.jce5;
+
+import javax.swing.*;
+
+public class ContactDriver
+{
+    public static void main(String[] args)
+    {
+        // Get email input from user
+        String emailAddressInput;
+        emailAddressInput = JOptionPane.showInputDialog(null,
+                "Please enter the new contact's email address:",
+                "New Contact", 3);
+        try
+        {
+            // Create a new contact object
+            Contact c = new Contact (emailAddressInput);
+            
+            // Display new contact's email address
+            JOptionPane.showMessageDialog(null,
+                    "New contact created. \nEmail address: " + c.getEmail(),
+                    "New Contact Created", 1);
+        }
+        catch (InvalidEmailException iee )
+        {
+            // Display exception information
+            JOptionPane.showMessageDialog(null,
+                    iee.getMessage(), "Contract Exception", 0);    
+            JOptionPane.showMessageDialog(null,
+                    iee.getStackTrace(), "Contract Exception", 0);
+        }
+    }
+}

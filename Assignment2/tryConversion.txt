@@ -1,0 +1,57 @@
+/* JCE on Exception Handling
+   Fall 2025
+   Student:
+   Date:
+ */
+
+package burnell.frank.jce5;
+
+import javax.swing.JOptionPane;
+
+/* 
+Integer to control the icon in JOptionPane dialog boxes
+0 - ERROR_MESSAGE
+1 - INFORMATION_MESSAGE
+2 - WARNING_MESSAGE
+3 - QUESTION_MESSAGE
+*/
+
+public class TryConversion
+{
+    public static void main( String [] args )
+    {
+        int n = 0;
+        String exInfo; 
+     
+        // Prompt for input
+        String s = JOptionPane.showInputDialog( null,
+                             "Enter an integer", "Conversion", 3);
+        try
+        {
+           // Convert the String to an int
+
+        }
+        catch ( NumberFormatException nfe )
+        {
+           exInfo = "User input: " + s;
+           
+           // Get exception info
+           // getMessage()
+
+
+           // toString()
+      
+           
+           // Display conversion result
+           JOptionPane.showMessageDialog(null, 
+                   "Invalid user input. Program will terminate.\n" +
+                   "Below is info on the exception.\n\n" + exInfo,
+                   "Conversion Exception", 0);
+        }
+        finally
+        {
+            // Display a message that will appear whether exception ocurred or not
+            
+        }
+    }
+}

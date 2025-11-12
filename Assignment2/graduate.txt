@@ -1,0 +1,49 @@
+/* JCE on Inheritance
+   Fall 2025
+   Student:
+   Date:
+ */
+
+ /* This is the template for graduate student objects. It is a subclass
+   of the Student class. */
+
+package burnell.frank.jce4;
+
+public abstract class Graduate extends Student
+{
+    // Instance variables specific to this subclass
+    private int gmat;
+
+    public Graduate (String i, String n, char g, float gpa, int gmat)
+    {
+        super(i, n, g, gpa);
+        this.gmat = gmat;
+    }        
+
+    public void describeSelf()
+    {
+        String infoStr = "\nUNT ID: " + this.getUNTID();
+        infoStr += "\nName: " + this.getName();
+        infoStr += "\nGender: " + this.getGender();
+        infoStr += "\nGPA: " + this.getGPA();
+        infoStr += "\nGMAT Score: " + gmat;
+
+        System.out.println("*****************************************");
+        System.out.println("Output from describeSelf() in Graduate");
+        System.out.println("It doesn't include output from Student");
+        System.out.println(infoStr);
+        System.out.println("*****************************************\n");
+    }
+
+    public abstract StringBuilder doResearch();
+ 
+    public void setGMAT(int g)
+    {
+        gmat = g;
+    }
+    
+    public int getGMAT()
+    {
+        return gmat;
+    }
+}

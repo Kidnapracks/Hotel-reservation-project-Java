@@ -1,0 +1,29 @@
+package burnell.frank.assignment3;
+
+public class Tablet extends Device implements Kioskable 
+{
+
+    
+    public Tablet() 
+    {
+        super();
+    }
+
+  
+    public Tablet(String brand, String model, float price, boolean tradeIn) 
+    {
+        super(brand, model, price, tradeIn);
+    }
+
+    @Override
+    public String readDeviceInfo() 
+    {
+        return "This is a tablet computer.";
+    }
+
+    @Override
+    public String runDemo() 
+    {
+        return "This kiosk demo is being displayed on the tablet computer.";
+    }
+}

@@ -1,0 +1,35 @@
+package burnell.frank.assignment3;
+
+import javax.swing.JOptionPane;
+
+public class Driver
+{
+    public static void main(String[] args)
+    {
+        String title = "Frank Burnell";
+
+        Device[] devices = new Device[4];
+        devices[0] = new CellPhone("Apple", "iPhone 17 Pro Max", 1299.99f, false,
+                "T-Mobile", "940-555-1212");
+
+        devices[1] = new CellPhone("Samsung", "Galaxy Galaxy S24+", 859.99f, true,
+                "Verizon", "972-555-2222");
+
+        devices[2] = new Watch("Samsung", "Galaxy Watch6 Classic", 349.99f, true, false, "Silver");
+        
+        Tablet t = new Tablet();
+        
+        devices[3] = t;
+        
+        JOptionPane.showMessageDialog(null, 
+                t.runDemo(), title, JOptionPane.INFORMATION_MESSAGE);
+        
+        String deviceInfo = "";
+        for (int i = 0; i < devices.length; i++)
+        {
+            deviceInfo = devices[i].readDeviceInfo();
+            JOptionPane.showMessageDialog(null,
+                    deviceInfo, title, JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+}

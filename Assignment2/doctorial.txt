@@ -1,0 +1,64 @@
+/* JCE on Inheritance
+   Fall 2025
+   Student:
+   Date:
+ */
+
+ /* This is the template for doctoral student objects. It is a subclass
+   of the Graduate class, which itself is a subclass of Student in turn. */
+
+package burnell.frank.jce4;
+
+public class Doctoral extends Graduate
+{
+    private boolean candidate;
+    private String dissertationChair;
+
+    public Doctoral(String i, String n, char g, float gpa,
+            int gmat, boolean c, String d)
+    {
+        super(i, n, g, gpa, gmat);
+        candidate = c;
+        dissertationChair = d;
+    }
+    
+    public StringBuilder doResearch()
+    {
+        StringBuilder d = new StringBuilder();
+
+        d.append("======================================================================\n");
+        d.append("       Doctoral Research: Output from doResearch() in Doctoral\n");
+        d.append("======================================================================\n");
+
+        d.append(
+                "Doctoral students are required to design and implement a sophisticated \n"
+                + "academic study after they pass the Comprehensive Exams and become a\n"
+                + "doctoral candidate. They should do this under the supervision of their\n"
+                + "dissertation chairs and their doctoral study should contribute new\n"
+                + "findings to our knowledge about the discipline in which their research\n"
+                + "done. The dissertation typically takes two years to complete and its\n"
+                + "length typically runs from 100 to 300 pages.\n\n");
+
+        return d;
+    }
+
+    public void setCandidate(boolean c)
+    {    
+        candidate = c;
+    }
+    
+    public  boolean isCandidate()
+    {
+        return candidate;
+    }
+
+    public void setDissertationChair(String d)
+    {
+        dissertationChair = d;
+    } 
+    
+    public String getDissertationChair()
+    {
+        return dissertationChair;
+    }        
+}

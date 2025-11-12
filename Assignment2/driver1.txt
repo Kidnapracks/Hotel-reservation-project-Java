@@ -1,0 +1,34 @@
+/* JCE on Inheritance
+   Fall 2025
+   Student:
+   Date:
+ */
+
+/* This class shows some basic inheritance concepts, including constructor
+chaining, method overriding, and abstract methods. */
+
+package burnell.frank.jce4;
+
+public class Driver
+{
+    public static void main(String[] args)
+    {
+        // First object: An undergrad student object
+        Undergrad u1 = new Undergrad("10101111", "Alice", 'F', 3.50f, "Junior", 1250);
+        u1.describeSelf();
+        StringBuilder u1Res = u1.doResearch();
+        System.out.println(u1Res);
+
+        // Second object: A doctoral student object
+        Doctoral d1 = new Doctoral("10102222", "Eve", 'F', 3.23f, 660, true, "Andy Wu");
+        d1.describeSelf();
+        StringBuilder d1Res = d1.doResearch();
+        System.out.println(d1Res);
+
+        // Third object: A Master student object
+        Master m1 = new Master("101033333", "Bob", 'M', 3.15f, 570, "Cloud Computing");
+        m1.describeSelf();
+        StringBuilder m1Res = m1.doResearch();
+        System.out.println(m1Res);
+    }
+}

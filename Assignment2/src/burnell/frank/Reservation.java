@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package burnell.frank;
+
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author administrator
+ */
+
+//Frank Burnell
+// 9/27/2025
+
+public class Reservation
+{
+    private Room guestRoom; 
+    private Customer guest;
+    private int numOfNights;
+    private String arrival;
+    private float rate;
+    
+    public Reservation(Room guestRoom, Customer guest, String arrival, int numOfNights)
+    {
+        this.guestRoom   = guestRoom;
+        this.guest       = guest;
+        this.numOfNights = numOfNights;
+        this.arrival     = arrival;
+        
+        double std = guestRoom.getStdRate();
+        double effective =guest.isClubMember() ? std * .90 : std;
+        this.rate = (float) effective;
+    }
+    
+    public String toString()
+    {
+        DecimalFormat money = new DecimalFormat("$#,##0.00");
+        String memberText = guest.isClubMember() ? " Yes" : "No";
+        
+        return "Customer Name:" + guest.getName() + "\n"
+        + "Rewards club member" + memberText + "\n"
+        + "Rate: " + money.format(rate) + "per night for" + numOfNights + "nights\n"
+        + "Check in date: " +arrival;
+    }
+}

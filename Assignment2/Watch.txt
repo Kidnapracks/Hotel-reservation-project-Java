@@ -1,0 +1,48 @@
+package burnell.frank.assignment3;
+
+public class Watch extends Device 
+{
+
+    private boolean leatherBand;
+    private String bandColor;
+
+   
+    public Watch(String brand, String model, float price, boolean tradeIn,
+                 boolean leatherBand, String bandColor) 
+    {
+        super(brand, model, price, tradeIn);
+        this.leatherBand = leatherBand;
+        this.bandColor = bandColor;
+    }
+
+    
+   
+    public boolean hasLeatherBand() 
+    {
+        return leatherBand;
+    }
+
+    public void setLeatherBand(boolean leatherBand) 
+    {
+        this.leatherBand = leatherBand;
+    }
+
+    
+    public String getBandColor() 
+    {
+        return bandColor;
+    }
+
+    public void setBandColor(String bandColor) 
+    {
+        this.bandColor = bandColor;
+    }
+
+    @Override
+    public String readDeviceInfo() 
+    {
+        java.text.DecimalFormat df = new java.text.DecimalFormat("$#,##0.00");
+        return "For a limited time, get " + getBrand() + " " + getModel()
+             + "\nfor " + df.format(getPrice()) + ".";
+    }
+}
